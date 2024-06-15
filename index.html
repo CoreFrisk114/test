@@ -1,10 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>测试页面</title>
+    <title>旋转的图片</title>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .rotating-image {
+            animation: spin 10s linear infinite;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%; /* 根据需要调整图片大小 */
+        }
+        .centered-text {
+            text-align: center;
+            font-size: 24px; /* 根据需要调整文字大小 */
+            margin-top: 20px; /* 根据需要调整文字与图片的间距 */
+        }
+    </style>
 </head>
 <body>
-    <p>圆形菠菜！</p>
+    <img src="spinach.jpg" alt="旋转的菠菜" class="rotating-image">
+    <div class="centered-text">Round Spinach</div>
 </body>
 </html>
