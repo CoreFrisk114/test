@@ -29,12 +29,12 @@
 <body>
     <img src="potato.jpg" alt="旋转的土豆" id="rotatingImage" class="rotating-image">
     <div class="centered-text">旋转土豆by没肝菜</div>
-    <input type="range" id="speedControl" min="1" max="10" value="5">
+    <input type="range" id="speedControl" min="1" max="100" value="5">
     <script>
         var img = document.getElementById('rotatingImage');
         var speedControl = document.getElementById('speedControl');
         speedControl.addEventListener('input', function() {
-            var speed = 5 - this.value; // 调整速度范围
+            var speed = 99 - this.value; // 调整速度范围
             img.style.animation = 'spin ' + speed + 's linear infinite';
         });
     </script>
