@@ -13,12 +13,12 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 40%; /* 根据需要调整图片大小 */
+            width: 50%; /* 根据需要调整图片大小 */
         }
         .centered-text {
             text-align: center;
             font-size: 100px; /* 文本字号更大 */
-            margin-top: 100px; /* 文本与图片之间的间距更大 */
+            margin-top: 50px; /* 文本与图片之间的间距更大 */
         }
         .slider-container {
             text-align: center; /* 滑动条居中 */
@@ -26,11 +26,6 @@
         #speedControl {
             width: 50%; /* 滑动条长度 */
             margin: 20px auto; /* 上下边距 */
-        }
-        .vibrate-warning {
-            text-align: center;
-            font-size: 14px; /* 提示文本的字号 */
-            margin-top: 20px; /* 提示文本与按钮的间距 */
         }
     </style>
 </head>
@@ -40,29 +35,16 @@
     <div class="slider-container">
         <input type="range" id="speedControl" min="1" max="100" value="90"> <!-- 起始速度更快 -->
     </div>
-    <button id="vibrateButton">开始震动</button>
-    <div class="vibrate-warning">酷按钮，部分设备（如电脑）无法使用</div>
+    <audio autoplay loop>
+        <source src="wasted.mp3" type="audio/mpeg">
+        您的浏览器不支持 audio 元素。
+    </audio>
     <script>
         var img = document.getElementById('rotatingImage');
         var speedControl = document.getElementById('speedControl');
         speedControl.addEventListener('input', function() {
             var speed = (101 - this.value) / 10; // 最大速度更快
             img.style.animation = 'spin ' + speed + 's linear infinite';
-        });
-
-        var vibrateButton = document.getElementById('vibrateButton');
-        var isVibrating = false;
-
-        vibrateButton.addEventListener('click', function() {
-            if (!isVibrating) {
-                navigator.vibrate([500, 300, 500]); // 震动模式：震动500ms，停300ms，再震动500ms
-                vibrateButton.textContent = '停止';
-                isVibrating = true;
-            } else {
-                navigator.vibrate(0); // 停止震动
-                vibrateButton.textContent = '开始震动';
-                isVibrating = false;
-            }
         });
     </script>
 </body>
