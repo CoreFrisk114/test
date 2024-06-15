@@ -17,8 +17,8 @@
         }
         .centered-text {
             text-align: center;
-            font-size: 15px; /* 根据需要调整文字大小 */
-            margin-top: 20px; /* 根据需要调整文字与图片的间距 */
+            font-size: 80px; /* 根据需要调整文字大小 */
+            margin-top: 80px; /* 根据需要调整文字与图片的间距 */
         }
         #speedControl {
             width: 300px; /* 根据需要调整滑动条长度 */
@@ -34,7 +34,7 @@
         var img = document.getElementById('rotatingImage');
         var speedControl = document.getElementById('speedControl');
         speedControl.addEventListener('input', function() {
-            var speed = 20 - this.value; // 调整速度范围
+            var speed = 5 - this.value; // 调整速度范围
             img.style.animation = 'spin ' + speed + 's linear infinite';
         });
     </script>
