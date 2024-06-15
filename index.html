@@ -9,32 +9,37 @@
             100% { transform: rotate(360deg); }
         }
         .rotating-image {
-            animation: spin 5s linear infinite;
+            animation: spin 2s linear infinite; /* 默认旋转速度更快 */
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 20%; /* 根据需要调整图片大小 */
+            width: 30%; /* 根据需要调整图片大小 */
         }
         .centered-text {
             text-align: center;
-            font-size: 80px; /* 根据需要调整文字大小 */
-            margin-top: 80px; /* 根据需要调整文字与图片的间距 */
+            font-size: 32px; /* 文本字号更大 */
+            margin-top: 50px; /* 文本与图片之间的间距更大 */
+        }
+        .slider-container {
+            text-align: center; /* 滑动条居中 */
         }
         #speedControl {
-            width: 600px; /* 根据需要调整滑动条长度 */
-            margin: 50px auto;
+            width: 50%; /* 滑动条长度 */
+            margin: 20px auto; /* 上下边距 */
         }
     </style>
 </head>
 <body>
     <img src="potato.jpg" alt="旋转的土豆" id="rotatingImage" class="rotating-image">
     <div class="centered-text">旋转土豆by没肝菜</div>
-    <input type="range" id="speedControl" min="1" max="100" value="5">
+    <div class="slider-container">
+        <input type="range" id="speedControl" min="1" max="100" value="50"> <!-- 精度更大，最大速度更快 -->
+    </div>
     <script>
         var img = document.getElementById('rotatingImage');
         var speedControl = document.getElementById('speedControl');
         speedControl.addEventListener('input', function() {
-            var speed = 1000 - this.value; // 调整速度范围
+            var speed = 101 - this.value; // 调整速度范围，最大速度更快
             img.style.animation = 'spin ' + speed + 's linear infinite';
         });
     </script>
