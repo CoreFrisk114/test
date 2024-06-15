@@ -34,7 +34,7 @@
         var img = document.getElementById('rotatingImage');
         var speedControl = document.getElementById('speedControl');
         speedControl.addEventListener('input', function() {
-            var speed = 99 - this.value; // 调整速度范围
+            var speed = 5 - this.value; // 调整速度范围
             img.style.animation = 'spin ' + speed + 's linear infinite';
         });
     </script>
