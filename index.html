@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>泡泡纸点击游戏</title>
+  <style>
+    body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f0f0; }
+    .bubble { width: 50px; height: 50px; background-color: #fff; border-radius: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 5px; cursor: pointer; }
+    .popped { background-color: #ddd; box-shadow: none; }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+  <script>
+    const gameContainer = document.getElementById('game');
+    for (let i = 0; i < 100; i++) {
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.addEventListener('click', () => {
+        bubble.classList.add('popped');
+      });
+      gameContainer.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>
