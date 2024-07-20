@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>泡泡纸点击游戏</title>
-  <style>
-    body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f0f0; }
-    .bubble { width: 50px; height: 50px; background-color: #fff; border-radius: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 5px; cursor: pointer; }
-    .popped { background-color: #ddd; box-shadow: none; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Random Audio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #d3d3d3; /* 灰色背景 */
+        }
+        button {
+            font-size: 2em;
+            padding: 20px 40px;
+            cursor: pointer;
+            background-color: #4CAF50; /* 绿色按钮 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049; /* 按钮悬停时的颜色 */
+        }
+    </style>
 </head>
 <body>
-  <div id="game"></div>
-  <script>
-    const gameContainer = document.getElementById('game');
-    for (let i = 0; i < 100; i++) {
-      const bubble = document.createElement('div');
-      bubble.className = 'bubble';
-      bubble.addEventListener('click', () => {
-        bubble.classList.add('popped');
-      });
-      gameContainer.appendChild(bubble);
-    }
-  </script>
+    <button id="playButton">ROUND</button>
+    <audio id="audio"></audio>
+
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            var randomIndex = Math.floor(Math.random() * 10) + 1;
+            var audio = document.getElementById('audio');
+            audio.src = randomIndex + '.mp3';
+            audio.play();
+        });
+    </script>
 </body>
 </html>
