@@ -38,7 +38,7 @@
         document.getElementById('playButton').addEventListener('click', function() {
             var randomIndex = Math.floor(Math.random() * audioFiles.length);
             var audio = document.getElementById('audio');
-            audio.src = 'audio/' + audioFiles[randomIndex]; // 从audio文件夹中加载音频文件
+            audio.src = audioFiles[randomIndex];
             audio.play();
         });
     </script>
